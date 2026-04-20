@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Свадебная анкета — Бриф для организатора</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f9f5ef;
+    --ivory: #fdfaf5;
+    --champagne: #f5e6d3;
+    --rose: #d4a5a5;
+    --rose-dark: #b88686;
+    --gold: #c9a96e;
+    --brown: #4a3728;
+    --brown-soft: #6d5a48;
+    --border: #e8dccf;
+    --shadow: 0 2px 20px rgba(74, 55, 40, 0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Montserrat', -apple-system, sans-serif;
+    background: var(--ivory);
+    color: var(--brown);
+    line-height: 1.7;
+    font-weight: 300;
+    font-size: 15px;
+  }
+
+  /* Декоративный фон */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at top left, rgba(212, 165, 165, 0.08), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(201, 169, 110, 0.06), transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container { position: relative; z-index: 1; }
+
+  /* Hero */
+  .hero {
+    text-align: center;
+    padding: 80px 20px 60px;
+    background: linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+
+  .hero-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    color: var(--gold);
+    font-size: 14px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .hero-ornament::before,
+  .hero-ornament::after {
+    content: '';
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: clamp(42px, 6vw, 68px);
+    color: var(--brown);
+    line-height: 1.1;
+    margin-bottom: 18px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--rose-dark);
+    font-weight: 500;
+  }
+
+  .hero p {
+    max-width: 640px;
+    margin: 0 auto;
+    color: var(--brown-soft);
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 36px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: var(--brown-soft);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .hero-meta span { display: flex; align-items: center; gap: 8px; }
+  .hero-meta .dot { width: 4px; height: 4px; background: var(--gold); border-radius: 50%; }
+
+  /* Navigation */
+  .nav {
+    position: sticky;
+    top: 0;
+    background: rgba(253, 250, 245, 0.97);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+    padding: 14px 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav a {
+    color: var(--brown-soft);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    border-radius: 20px;
+    transition: all 0.25s;
+    font-weight: 500;
+  }
+
+  .nav a:hover {
+    background: var(--champagne);
+    color: var(--brown);
+  }
+
+  /* Main Content */
+  main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 60px 24px 100px;
+  }
+
+  section.block {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 48px 44px;
+    margin-bottom: 36px;
+    box-shadow: var(--shadow);
+    scroll-margin-top: 80px;
+  }
+
+  .block-head {
+    text-align: center;
+    padding-bottom: 30px;
+    margin-bottom: 36px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+
+  .block-num {
+    display: inline-block;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--gold);
+    font-size: 16px;
+    letter-spacing: 0.2em;
+    margin-bottom: 10px;
+  }
+
+  .block-head h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 34px;
+    color: var(--brown);
+    line-height: 1.2;
+  }
+
+  .block-head p {
+    color: var(--brown-soft);
+    font-size: 14px;
+    margin-top: 10px;
+    font-style: italic;
+  }
+
+  /* Fields */
+  .row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-bottom: 22px;
+  }
+
+  .row.full { grid-template-columns: 1fr; }
+
+  .field { display: flex; flex-direction: column; }
+
+  .field label {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--brown-soft);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  .field label .hint {
+    text-transform: none;
+    letter-spacing: normal;
+    font-size: 11px;
+    color: var(--rose-dark);
+    font-style: italic;
+    margin-left: 6px;
+  }
+
+  .field input[type="text"],
+  .field input[type="email"],
+  .field input[type="tel"],
+  .field input[type="date"],
+  .field input[type="number"],
+  .field select,
+  .field textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    background: var(--ivory);
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--brown);
+    transition: all 0.2s;
+    font-weight: 300;
+  }
+
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus {
+    outline: none;
+    border-color: var(--rose);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(212, 165, 165, 0.15);
+  }
+
+  .field textarea { resize: vertical; min-height: 70px; }
+
+  /* Checkbox & Radio groups */
+  .options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .options label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    text-transform: none;
+    letter-spacing: normal;
+    color: var(--brown);
+    background: var(--ivory);
+    transition: all 0.2s;
+    margin: 0;
+    font-weight: 400;
+  }
+
+  .options label:hover {
+    border-color: var(--rose);
+    background: #fff;
+  }
+
+  .options input { display: none; }
+
+  .options input:checked + span,
+  .options label:has(input:checked) {
+    background: var(--rose);
+    color: #fff;
+    border-color: var(--rose);
+  }
+
+  /* Tables */
+  .table-wrap { overflow-x: auto; margin-top: 12px; }
+
+  table.q-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  table.q-table th {
+    background: var(--champagne);
+    color: var(--brown);
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  table.q-table td {
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    vertical-align: middle;
+  }
+
+  table.q-table tbody tr:nth-child(even) { background: rgba(245, 230, 211, 0.25); }
+
+  table.q-table input,
+  table.q-table select,
+  table.q-table textarea {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid transparent;
+    background: transparent;
+    font-family: inherit;
+    font-size: 13px;
+    color: var(--brown);
+    border-radius: 2px;
+  }
+
+  table.q-table input:focus,
+  table.q-table select:focus,
+  table.q-table textarea:focus {
+    outline: none;
+    border-color: var(--rose);
+    background: #fff;
+  }
+
+  table.q-table .cat-col {
+    font-weight: 500;
+    color: var(--brown);
+    white-space: nowrap;
+    min-width: 170px;
+  }
+
+  /* Dividers and notes */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: var(--gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 18px;
+    margin: 32px 0 20px;
+  }
+
+  .divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .note {
+    background: var(--champagne);
+    border-left: 3px solid var(--gold);
+    padding: 14px 18px;
+    border-radius: 2px;
+    font-size: 13px;
+    color: var(--brown);
+    font-style: italic;
+    margin-top: 16px;
+  }
+
+  /* Actions */
+  .actions {
+    position: sticky;
+    bottom: 0;
+    background: rgba(253, 250, 245, 0.97);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--border);
+    padding: 18px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    z-index: 50;
+  }
+
+  button, .btn {
+    padding: 12px 28px;
+    border: none;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.25s;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-primary {
+    background: var(--brown);
+    color: var(--ivory);
+  }
+
+  .btn-primary:hover {
+    background: var(--rose-dark);
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--brown);
+    border: 1px solid var(--brown);
+  }
+
+  .btn-secondary:hover {
+    background: var(--champagne);
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--brown-soft);
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border-top: 1px solid var(--border);
+  }
+
+  footer em {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--gold);
+    text-transform: none;
+    letter-spacing: normal;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* Responsive */
+  @media (max-width: 700px) {
+    .row { grid-template-columns: 1fr; gap: 16px; }
+    section.block { padding: 30px 22px; }
+    .hero { padding: 50px 20px 40px; }
+    .hero-meta { gap: 20px; }
+    main { padding: 40px 16px 80px; }
+    .block-head h2 { font-size: 28px; }
+  }
+
+  /* Print styles */
+  @media print {
+    .nav, .actions { display: none; }
+    section.block { page-break-inside: avoid; box-shadow: none; }
+    body { background: #fff; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-ornament">Свадебный бриф</div>
+    <h1>Давайте создадим <em>вашу</em> идеальную свадьбу</h1>
+    <p>Эта анкета поможет нам узнать вас, ваши мечты и все важные детали. Заполните её перед нашей встречей — так мы сможем подготовить предложение, которое отразит именно ваше видение.</p>
+    <div class="hero-meta">
+      <span><span class="dot"></span>15–25 минут</span>
+      <span><span class="dot"></span>12 разделов</span>
+      <span><span class="dot"></span>Конфиденциально</span>
+    </div>
+  </header>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#s1">О паре</a>
+      <a href="#s2">Дата и место</a>
+      <a href="#s3">Бюджет</a>
+      <a href="#s4">Стиль</a>
+      <a href="#s5">Гости</a>
+      <a href="#s6">Подрядчики</a>
+      <a href="#s7">Церемония</a>
+      <a href="#s8">Программа</a>
+      <a href="#s9">Меню</a>
+      <a href="#s10">Тайминг</a>
+      <a href="#s11">Особое</a>
+      <a href="#s12">Финал</a>
+    </div>
+  </nav>
+
+  <main>
+
+  <!-- 1. О ПАРЕ -->
+  <section id="s1" class="block">
+    <div class="block-head">
+      <div class="block-num">— I —</div>
+      <h2>О паре</h2>
+      <p>Познакомимся поближе</p>
+    </div>
+
+    <div class="divider">Невеста</div>
+    <div class="row">
+      <div class="field"><label>Имя и фамилия</label><input type="text"></div>
+      <div class="field"><label>Дата рождения</label><input type="date"></div>
+      <div class="field"><label>Телефон</label><input type="tel" placeholder="+7 ..."></div>
+      <div class="field"><label>Email</label><input type="email"></div>
+      <div class="field"><label>Instagram / соцсети</label><input type="text" placeholder="@username"></div>
+      <div class="field"><label>Профессия</label><input type="text"></div>
+    </div>
+
+    <div class="divider">Жених</div>
+    <div class="row">
+      <div class="field"><label>Имя и фамилия</label><input type="text"></div>
+      <div class="field"><label>Дата рождения</label><input type="date"></div>
+      <div class="field"><label>Телефон</label><input type="tel" placeholder="+7 ..."></div>
+      <div class="field"><label>Email</label><input type="email"></div>
+      <div class="field"><label>Instagram / соцсети</label><input type="text" placeholder="@username"></div>
+      <div class="field"><label>Профессия</label><input type="text"></div>
+    </div>
+
+    <div class="divider">История пары</div>
+    <div class="row full">
+      <div class="field"><label>Расскажите, как вы познакомились <span class="hint">— вдохновит нас на детали</span></label><textarea rows="3"></textarea></div>
+      <div class="field"><label>История предложения</label><textarea rows="2"></textarea></div>
+    </div>
+    <div class="row">
+      <div class="field">
+        <label>Предпочтительный способ связи</label>
+        <div class="options">
+          <label><input type="checkbox"> Telegram</label>
+          <label><input type="checkbox"> WhatsApp</label>
+          <label><input type="checkbox"> Звонок</label>
+          <label><input type="checkbox"> Email</label>
+        </div>
+      </div>
+      <div class="field"><label>Кто принимает финальные решения?</label><input type="text" placeholder="Невеста / жених / совместно / родители"></div>
+    </div>
+    <div class="row">
+      <div class="field"><label>Как узнали о нас?</label><input type="text"></div>
+      <div class="field"><label>Был ли опыт работы с организаторами ранее?</label><input type="text"></div>
+    </div>
+  </section>
+
+  <!-- 2. ДАТА И МЕСТО -->
+  <section id="s2" class="block">
+    <div class="block-head">
+      <div class="block-num">— II —</div>
+      <h2>Дата и место</h2>
+      <p>Когда и где будет сказано «да»</p>
+    </div>
+
+    <div class="row">
+      <div class="field"><label>Предполагаемая дата</label><input type="date"></div>
+      <div class="field"><label>Альтернативные даты</label><input type="text"></div>
+      <div class="field">
+        <label>Гибкость по дате</label>
+        <div class="options">
+          <label><input type="radio" name="flex"> Фиксированная</label>
+          <label><input type="radio" name="flex"> ± неделя</label>
+          <label><input type="radio" name="flex"> ± месяц</label>
+          <label><input type="radio" name="flex"> Открыты к вариантам</label>
+        </div>
+      </div>
+      <div class="field"><label>Город и регион проведения</label><input type="text"></div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label>Локация уже выбрана?</label>
+        <div class="options">
+          <label><input type="radio" name="loc"> Да</label>
+          <label><input type="radio" name="loc"> Нет, нужна помощь</label>
+          <label><input type="radio" name="loc"> Есть варианты</label>
+        </div>
+      </div>
+      <div class="field"><label>Название локации <span class="hint">(если выбрана)</span></label><input type="text"></div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label>Тип локации</label>
+        <div class="options">
+          <label><input type="checkbox"> Ресторан</label>
+          <label><input type="checkbox"> Загородный клуб</label>
+          <label><input type="checkbox"> Шатёр / усадьба</label>
+          <label><input type="checkbox"> Отель</label>
+          <label><input type="checkbox"> На природе</label>
+          <label><input type="checkbox"> За границей</label>
+        </div>
+      </div>
+      <div class="field">
+        <label>Формат</label>
+        <div class="options">
+          <label><input type="radio" name="format"> На природе</label>
+          <label><input type="radio" name="format"> В помещении</label>
+          <label><input type="radio" name="format"> Смешанный</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field"><label>Предполагаемое время начала</label><input type="time"></div>
+      <div class="field"><label>Предполагаемое время окончания</label><input type="time"></div>
+      <div class="field">
+        <label>Нужен трансфер для гостей?</label>
+        <div class="options">
+          <label><input type="radio" name="trans"> Да</label>
+          <label><input type="radio" name="trans"> Нет</label>
+          <label><input type="radio" name="trans"> Частично</label>
+        </div>
+      </div>
+      <div class="field">
+        <label>Нужно проживание для гостей?</label>
+        <div class="options">
+          <label><input type="radio" name="stay"> Да</label>
+          <label><input type="radio" name="stay"> Нет</label>
+          <label><input type="radio" name="stay"> Только VIP</label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. БЮДЖЕТ -->
+  <section id="s3" class="block">
+    <div class="block-head">
+      <div class="block-num">— III —</div>
+      <h2>Бюджет</h2>
+      <p>Финансовые рамки и приоритеты</p>
+    </div>
+
+    <div class="row">
+      <div class="field"><label>Общий бюджет, ₽</label><input type="text" placeholder="Например, 2 500 000"></div>
+      <div class="field">
+        <label>Гибкость бюджета</label>
+        <div class="options">
+          <label><input type="radio" name="bflex"> Жёсткий лимит</label>
+          <label><input type="radio" name="bflex"> ± 10%</label>
+          <label><input type="radio" name="bflex"> ± 20%</label>
+          <label><input type="radio" name="bflex"> Гибкий</label>
+        </div>
+      </div>
+      <div class="field"><label>Кто финансирует свадьбу?</label><input type="text" placeholder="Пара / родители / смешанно"></div>
+      <div class="field">
+        <label>Запас на непредвиденные расходы?</label>
+        <div class="options">
+          <label><input type="radio" name="reserve"> Да</label>
+          <label><input type="radio" name="reserve"> Нет</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="note">Распределение бюджета — укажите приоритет по категориям (1 — максимальный, 5 — минимальный). Это поможет нам сфокусироваться на том, что важно именно вам.</div>
+
+    <div class="table-wrap">
+      <table class="q-table">
+        <thead>
+          <tr>
+            <th>Категория</th>
+            <th style="width:140px">Бюджет, ₽</th>
+            <th style="width:120px">Приоритет</th>
+            <th>Комментарий</th>
+          </tr>
+        </thead>
+        <tbody>
+          <script>
+            // rendered below via static rows for print
+          </script>
+          <tr><td class="cat-col">Локация и аренда</td><td><input type="text"></td><td><select><option></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Кейтеринг</td><td><input type="text"></td><td><select><option></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Алкоголь</td><td><input type="text"></td><td><select><option></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Декор и флористика</td><td><input type="text"></td><td><select><option></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Фотограф</td><td><input type="text"></td><td><select><option></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Видеограф</td><td><input type="text"></td><td><select><option></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Ведущий</td><td><input type="text"></td><td><select><option></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Музыка / DJ / группа</td><td><input type="text"></td><td><select><option></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Платье и костюм</td><td><input type="text"></td><td><select><option></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Причёска и макияж</td><td><input type="text"></td><td><select><option></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Кольца</td><td><input type="text"></td><td><select><option></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Транспорт</td><td><input type="text"></td><td><select><option></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Полиграфия и приглашения</td><td><input type="text"></td><td><select><option></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Торт и десерты</td><td><input type="text"></td><td><select><option></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Шоу-программа</td><td><input type="text"></td><td><select><option></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Услуги организатора</td><td><input type="text"></td><td><select><option></option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td><td><input type="text"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 4. СТИЛЬ -->
+  <section id="s4" class="block">
+    <div class="block-head">
+      <div class="block-num">— IV —</div>
+      <h2>Стиль и концепция</h2>
+      <p>Настроение и визуальный язык праздника</p>
+    </div>
+
+    <div class="row full">
+      <div class="field">
+        <label>Стиль свадьбы <span class="hint">— можно несколько</span></label>
+        <div class="options">
+          <label><input type="checkbox"> Классический</label>
+          <label><input type="checkbox"> Элегантный / премиум</label>
+          <label><input type="checkbox"> Минимализм</label>
+          <label><input type="checkbox"> Бохо</label>
+          <label><input type="checkbox"> Рустик</label>
+          <label><input type="checkbox"> Винтаж</label>
+          <label><input type="checkbox"> Гламур</label>
+          <label><input type="checkbox"> Индастриал</label>
+          <label><input type="checkbox"> Тропический</label>
+          <label><input type="checkbox"> Ar Deco</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field"><label>Желаемая цветовая палитра</label><input type="text" placeholder="Например, пыльная роза, шампань, золото"></div>
+      <div class="field"><label>Любимые цветы</label><input type="text"></div>
+      <div class="field"><label>Не нравится / аллергии на цветы</label><input type="text"></div>
+      <div class="field"><label>Dress code для гостей</label><input type="text" placeholder="Например, Black Tie, Pastel, White"></div>
+    </div>
+
+    <div class="row full">
+      <div class="field"><label>Ключевые слова / настроение <span class="hint">— 3–5 слов, которые описывают вашу свадьбу</span></label><input type="text" placeholder="Романтика, камерность, лёгкость..."></div>
+      <div class="field"><label>Ссылки на референсы (Pinterest, Instagram, свадьбы-примеры)</label><textarea rows="2"></textarea></div>
+      <div class="field"><label>Что категорически не нравится</label><textarea rows="2" placeholder="Элементы, которые точно не должны появиться"></textarea></div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label>Отношение к трендам</label>
+        <div class="options">
+          <label><input type="radio" name="trend"> Следуем</label>
+          <label><input type="radio" name="trend"> Избегаем</label>
+          <label><input type="radio" name="trend"> Нейтрально</label>
+        </div>
+      </div>
+      <div class="field">
+        <label>Есть ли тема / сюжет у свадьбы?</label>
+        <div class="options">
+          <label><input type="radio" name="theme"> Да</label>
+          <label><input type="radio" name="theme"> Нет</label>
+          <label><input type="radio" name="theme"> Думаем</label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. ГОСТИ -->
+  <section id="s5" class="block">
+    <div class="block-head">
+      <div class="block-num">— V —</div>
+      <h2>Гости</h2>
+      <p>Те, кого вы хотите видеть рядом</p>
+    </div>
+
+    <div class="row">
+      <div class="field"><label>Общее количество гостей</label><input type="number"></div>
+      <div class="field"><label>Со стороны невесты</label><input type="number"></div>
+      <div class="field"><label>Со стороны жениха</label><input type="number"></div>
+      <div class="field"><label>Возрастной диапазон гостей</label><input type="text" placeholder="Например, 25–65 лет"></div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label>Дети на свадьбе?</label>
+        <div class="options">
+          <label><input type="radio" name="kids"> Да</label>
+          <label><input type="radio" name="kids"> Нет, только взрослые</label>
+          <label><input type="radio" name="kids"> Только родственники</label>
+        </div>
+      </div>
+      <div class="field"><label>Если да — количество детей и возраст</label><input type="text"></div>
+      <div class="field">
+        <label>Нужна детская зона / няня?</label>
+        <div class="options">
+          <label><input type="radio" name="nanny"> Да</label>
+          <label><input type="radio" name="nanny"> Нет</label>
+        </div>
+      </div>
+      <div class="field"><label>Иностранные гости <span class="hint">— понадобится перевод?</span></label><input type="text"></div>
+    </div>
+
+    <div class="row full">
+      <div class="field"><label>VIP-гости и особые пожелания по ним</label><textarea rows="2"></textarea></div>
+      <div class="field"><label>Гости с особыми потребностями <span class="hint">— пандусы, доступ, мед. помощь</span></label><textarea rows="2"></textarea></div>
+      <div class="field"><label>Гости, которых стоит рассадить отдельно <span class="hint">— деликатно, конфиденциально</span></label><textarea rows="2"></textarea></div>
+      <div class="field"><label>Аллергии и диетические ограничения <span class="hint">— у гостей</span></label><textarea rows="2"></textarea></div>
+    </div>
+
+    <div class="divider">Коммуникация с гостями</div>
+    <div class="row">
+      <div class="field">
+        <label>Приглашения</label>
+        <div class="options">
+          <label><input type="radio" name="invites"> Бумажные</label>
+          <label><input type="radio" name="invites"> Электронные</label>
+          <label><input type="radio" name="invites"> Оба</label>
+        </div>
+      </div>
+      <div class="field"><label>Дата рассылки</label><input type="date"></div>
+      <div class="field"><label>Дедлайн RSVP</label><input type="date"></div>
+      <div class="field"><label>Hashtag свадьбы</label><input type="text" placeholder="#..."></div>
+    </div>
+  </section>
+
+  <!-- 6. ПОДРЯДЧИКИ -->
+  <section id="s6" class="block">
+    <div class="block-head">
+      <div class="block-num">— VI —</div>
+      <h2>Подрядчики и услуги</h2>
+      <p>Что уже выбрано, а что ещё предстоит</p>
+    </div>
+
+    <div class="note">Отметьте нужные категории и укажите уже выбранных подрядчиков. Для тех, кого ещё нет, мы предложим проверенные варианты.</div>
+
+    <div class="table-wrap">
+      <table class="q-table">
+        <thead>
+          <tr>
+            <th>Услуга</th>
+            <th style="width:70px">Нужна</th>
+            <th style="width:90px">Выбран</th>
+            <th>Имя / компания</th>
+            <th>Контакт</th>
+            <th>Комментарий</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="cat-col">Площадка</td><td style="text-align:center"><input type="checkbox"></td><td style="text-align:center"><input type="checkbox"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Кейтеринг</td><td style="text-align:center"><input type="checkbox"></td><td style="text-align:center"><input type="checkbox"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Бар / алкоголь</td><td style="text-align:center"><input type="checkbox"></td><td style="text-align:center"><input type="checkbox"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Торт и десерты</td><td style="text-align:center"><input type="checkbox"></td><td style="text-align:center"><input type="checkbox"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Декор и флористика</td><td style="text-align:center"><input type="checkbox"></td><td style="text-align:center"><input type="checkbox"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Фотограф</td><td style="text-align:center"><input type="checkbox"></td><td style="text-align:center"><input type="checkbox"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Видеограф</td><td style="text-align:center"><input type="checkbox"></td><td style="text-align:center"><input type="checkbox"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Ведущий / MC</td><td style="text-align:center"><input type="checkbox"></td><td style="text-align:center"><input type="checkbox"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">DJ</td><td style="text-align:center"><input type="checkbox"></td><td style="text-align:center"><input type="checkbox"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Живая музыка / группа</td><td style="text-align:center"><input type="checkbox"></td><td style="text-align:center"><input type="checkbox"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Струнный квартет</td><td style="text-align:center"><input type="checkbox"></td><td style="text-align:center"><input type="checkbox"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Хореограф (первый танец)</td><td style="text-align:center"><input type="checkbox"></td><td style="text-align:center"><input type="checkbox"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Платье невесты</td><td style="text-align:center"><input type="checkbox"></td><td style="text-align:center"><input type="checkbox"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Костюм жениха</td><td style="text-align:center"><input type="checkbox"></td><td style="text-align:center"><input type="checkbox"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Стилист / визаж / причёска</td><td style="text-align:center"><input type="checkbox"></td><td style="text-align:center"><input type="checkbox"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Обручальные кольца</td><td style="text-align:center"><input type="checkbox"></td><td style="text-align:center"><input type="checkbox"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Выездной регистратор</td><td style="text-align:center"><input type="checkbox"></td><td style="text-align:center"><input type="checkbox"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Транспорт (пара)</td><td style="text-align:center"><input type="checkbox"></td><td style="text-align:center"><input type="checkbox"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Транспорт (гости)</td><td style="text-align:center"><input type="checkbox"></td><td style="text-align:center"><input type="checkbox"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Фотозона</td><td style="text-align:center"><input type="checkbox"></td><td style="text-align:center"><input type="checkbox"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Полиграфия (приглашения, рассадка)</td><td style="text-align:center"><input type="checkbox"></td><td style="text-align:center"><input type="checkbox"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Световое оформление</td><td style="text-align:center"><input type="checkbox"></td><td style="text-align:center"><input type="checkbox"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Фейерверк / пиротехника</td><td style="text-align:center"><input type="checkbox"></td><td style="text-align:center"><input type="checkbox"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Шоу-программа / артисты</td><td style="text-align:center"><input type="checkbox"></td><td style="text-align:center"><input type="checkbox"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Фотобудка</td><td style="text-align:center"><input type="checkbox"></td><td style="text-align:center"><input type="checkbox"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Координатор на день</td><td style="text-align:center"><input type="checkbox"></td><td style="text-align:center"><input type="checkbox"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Охрана</td><td style="text-align:center"><input type="checkbox"></td><td style="text-align:center"><input type="checkbox"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td class="cat-col">Няня / детская зона</td><td style="text-align:center"><input type="checkbox"></td><td style="text-align:center"><input type="checkbox"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 7. ЦЕРЕМОНИЯ -->
+  <section id="s7" class="block">
+    <div class="block-head">
+      <div class="block-num">— VII —</div>
+      <h2>Церемония</h2>
+      <p>Главный момент дня</p>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label>Тип церемонии</label>
+        <div class="options">
+          <label><input type="checkbox"> Выездная</label>
+          <label><input type="checkbox"> ЗАГС</label>
+          <label><input type="checkbox"> Венчание</label>
+          <label><input type="checkbox"> Символическая</label>
+        </div>
+      </div>
+      <div class="field"><label>Место церемонии</label><input type="text"></div>
+      <div class="field"><label>Время</label><input type="time"></div>
+      <div class="field"><label>Гостей на церемонии</label><input type="number"></div>
+    </div>
+
+    <div class="row">
+      <div class="field"><label>Ведущий церемонии / регистратор</label><input type="text"></div>
+      <div class="field"><label>Длительность церемонии</label><input type="text" placeholder="например, 20 минут"></div>
+    </div>
+
+    <div class="row full">
+      <div class="field">
+        <label>Особые элементы церемонии</label>
+        <div class="options">
+          <label><input type="checkbox"> Обмен кольцами</label>
+          <label><input type="checkbox"> Свечи единства</label>
+          <label><input type="checkbox"> Песочная церемония</label>
+          <label><input type="checkbox"> Ритуал «руки и сердца»</label>
+          <label><input type="checkbox"> Символическое дерево</label>
+          <label><input type="checkbox"> Вино любви</label>
+        </div>
+      </div>
+      <div class="field"><label>Участники церемонии <span class="hint">— свидетели, дети с кольцами, подружки невесты</span></label><textarea rows="2"></textarea></div>
+      <div class="field">
+        <label>Клятвы</label>
+        <div class="options">
+          <label><input type="radio" name="vows"> Напишем сами</label>
+          <label><input type="radio" name="vows"> Стандартные</label>
+          <label><input type="radio" name="vows"> Нужна помощь</label>
+        </div>
+      </div>
+      <div class="field"><label>Музыкальное сопровождение</label><input type="text"></div>
+      <div class="field"><label>Оформление церемонии <span class="hint">— арка, дорожка, стулья</span></label><textarea rows="2"></textarea></div>
+      <div class="field"><label>Семейные и культурные традиции</label><textarea rows="2"></textarea></div>
+    </div>
+  </section>
+
+  <!-- 8. ПРОГРАММА -->
+  <section id="s8" class="block">
+    <div class="block-head">
+      <div class="block-num">— VIII —</div>
+      <h2>Программа вечера</h2>
+      <p>Как будет проходить банкет</p>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label>Формат банкета</label>
+        <div class="options">
+          <label><input type="radio" name="reception"> Застолье</label>
+          <label><input type="radio" name="reception"> Фуршет</label>
+          <label><input type="radio" name="reception"> Смешанный</label>
+        </div>
+      </div>
+      <div class="field">
+        <label>Нужен ведущий?</label>
+        <div class="options">
+          <label><input type="radio" name="mc"> Да</label>
+          <label><input type="radio" name="mc"> Нет</label>
+          <label><input type="radio" name="mc"> Подумаем</label>
+        </div>
+      </div>
+      <div class="field">
+        <label>Конкурсы</label>
+        <div class="options">
+          <label><input type="radio" name="games"> Да</label>
+          <label><input type="radio" name="games"> Нет</label>
+          <label><input type="radio" name="games"> Деликатные</label>
+        </div>
+      </div>
+      <div class="field">
+        <label>Afterparty</label>
+        <div class="options">
+          <label><input type="radio" name="after"> Да</label>
+          <label><input type="radio" name="after"> Нет</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row full">
+      <div class="field">
+        <label>Обязательные элементы программы <span class="hint">— что должно быть</span></label>
+        <div class="options">
+          <label><input type="checkbox"> Первый танец</label>
+          <label><input type="checkbox"> Танец с родителями</label>
+          <label><input type="checkbox"> Разрезание торта</label>
+          <label><input type="checkbox"> Бросание букета</label>
+          <label><input type="checkbox"> Поздравления родителей</label>
+          <label><input type="checkbox"> Тосты гостей</label>
+          <label><input type="checkbox"> Фейерверк / салют</label>
+          <label><input type="checkbox"> Запуск фонариков</label>
+          <label><input type="checkbox"> Конфетти-шоу</label>
+          <label><input type="checkbox"> Шоу-программа</label>
+        </div>
+      </div>
+      <div class="field"><label>Запрещённые элементы <span class="hint">— что точно НЕ должно быть</span></label><textarea rows="2" placeholder="Например, крики «Горько!», пошлые конкурсы, кража невесты..."></textarea></div>
+      <div class="field"><label>Сюрпризы <span class="hint">— для партнёра, гостей, родителей</span></label><textarea rows="2"></textarea></div>
+    </div>
+  </section>
+
+  <!-- 9. МЕНЮ -->
+  <section id="s9" class="block">
+    <div class="block-head">
+      <div class="block-num">— IX —</div>
+      <h2>Еда и напитки</h2>
+      <p>Вкусы, которые останутся в памяти</p>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label>Тип кухни</label>
+        <div class="options">
+          <label><input type="checkbox"> Европейская</label>
+          <label><input type="checkbox"> Русская</label>
+          <label><input type="checkbox"> Итальянская</label>
+          <label><input type="checkbox"> Азиатская</label>
+          <label><input type="checkbox"> Средиземноморская</label>
+          <label><input type="checkbox"> Fusion</label>
+        </div>
+      </div>
+      <div class="field">
+        <label>Формат подачи</label>
+        <div class="options">
+          <label><input type="radio" name="serve"> Банкетное меню</label>
+          <label><input type="radio" name="serve"> Шведский стол</label>
+          <label><input type="radio" name="serve"> Плато</label>
+          <label><input type="radio" name="serve"> Food-станции</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field"><label>Количество смен блюд</label><input type="number"></div>
+      <div class="field">
+        <label>Horячее</label>
+        <div class="options">
+          <label><input type="checkbox"> Мясо</label>
+          <label><input type="checkbox"> Рыба</label>
+          <label><input type="checkbox"> Оба</label>
+          <label><input type="checkbox"> Вегетарианское</label>
+        </div>
+      </div>
+      <div class="field">
+        <label>Welcome-drinks</label>
+        <div class="options">
+          <label><input type="radio" name="welcome"> Да</label>
+          <label><input type="radio" name="welcome"> Нет</label>
+        </div>
+      </div>
+      <div class="field">
+        <label>Бар</label>
+        <div class="options">
+          <label><input type="radio" name="bar"> Открытый</label>
+          <label><input type="radio" name="bar"> Закрытый</label>
+          <label><input type="radio" name="bar"> Комбинированный</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row full">
+      <div class="field">
+        <label>Специальные меню</label>
+        <div class="options">
+          <label><input type="checkbox"> Вегетарианское</label>
+          <label><input type="checkbox"> Веганское</label>
+          <label><input type="checkbox"> Халяль</label>
+          <label><input type="checkbox"> Кошер</label>
+          <label><input type="checkbox"> Без глютена</label>
+          <label><input type="checkbox"> Детское</label>
+        </div>
+      </div>
+      <div class="field"><label>Аллергены, которые нужно исключить</label><input type="text"></div>
+      <div class="field"><label>Торт <span class="hint">— вкус, дизайн, размер, число ярусов</span></label><textarea rows="2"></textarea></div>
+      <div class="field"><label>Десертный стол / Candy bar</label><textarea rows="2"></textarea></div>
+      <div class="field"><label>Пожелания по алкоголю <span class="hint">— любимые напитки, что обязательно должно быть</span></label><textarea rows="2"></textarea></div>
+      <div class="field"><label>Ночные закуски / поздний ужин</label><input type="text" placeholder="Например, пицца, бургеры в 00:00"></div>
+    </div>
+  </section>
+
+  <!-- 10. ТАЙМИНГ -->
+  <section id="s10" class="block">
+    <div class="block-head">
+      <div class="block-num">— X —</div>
+      <h2>Тайминг дня</h2>
+      <p>Ориентировочное расписание</p>
+    </div>
+
+    <div class="note">Это примерный тайминг — мы уточним все детали вместе. Отмечайте то, что для вас важно, и корректируйте время.</div>
+
+    <div class="table-wrap">
+      <table class="q-table">
+        <thead>
+          <tr>
+            <th style="width:110px">Время</th>
+            <th>Событие</th>
+            <th>Локация</th>
+            <th>Комментарий</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><input type="time" value="09:00"></td><td>Причёска и макияж невесты</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td><input type="time" value="11:00"></td><td>Сборы жениха</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td><input type="time" value="13:00"></td><td>Утренняя фотосессия</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td><input type="time" value="14:30"></td><td>Встреча молодых на площадке</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td><input type="time" value="15:00"></td><td>Выездная регистрация</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td><input type="time" value="16:00"></td><td>Welcome-фуршет</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td><input type="time" value="17:00"></td><td>Групповое фото</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td><input type="time" value="17:30"></td><td>Начало банкета</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td><input type="time" value="18:00"></td><td>Первый танец</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td><input type="time" value="20:00"></td><td>Разрезание торта</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td><input type="time" value="21:00"></td><td>Танцевальная программа</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td><input type="time" value="22:30"></td><td>Шоу-программа</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td><input type="time" value="23:30"></td><td>Финал — фейерверк</td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td><input type="time"></td><td><input type="text" placeholder="Добавить..."></td><td><input type="text"></td><td><input type="text"></td></tr>
+          <tr><td><input type="time"></td><td><input type="text" placeholder="Добавить..."></td><td><input type="text"></td><td><input type="text"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 11. ОСОБЫЕ -->
+  <section id="s11" class="block">
+    <div class="block-head">
+      <div class="block-num">— XI —</div>
+      <h2>Особые пожелания</h2>
+      <p>Детали, которые делают свадьбу уникальной</p>
+    </div>
+
+    <div class="row full">
+      <div class="field"><label>Семейные традиции, которые важно включить</label><textarea rows="2"></textarea></div>
+      <div class="field"><label>Религиозные аспекты</label><textarea rows="2"></textarea></div>
+      <div class="field"><label>Сюрпризы для гостей</label><textarea rows="2"></textarea></div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label>Подарки гостям (bonbonniere)</label>
+        <div class="options">
+          <label><input type="radio" name="bb"> Да</label>
+          <label><input type="radio" name="bb"> Нет</label>
+          <label><input type="radio" name="bb"> Думаем</label>
+        </div>
+      </div>
+      <div class="field">
+        <label>Книга пожеланий</label>
+        <div class="options">
+          <label><input type="radio" name="book"> Да</label>
+          <label><input type="radio" name="book"> Нет</label>
+        </div>
+      </div>
+      <div class="field">
+        <label>Live-стрим для отсутствующих</label>
+        <div class="options">
+          <label><input type="radio" name="stream"> Да</label>
+          <label><input type="radio" name="stream"> Нет</label>
+        </div>
+      </div>
+      <div class="field">
+        <label>Питомец на свадьбе</label>
+        <div class="options">
+          <label><input type="radio" name="pet"> Да</label>
+          <label><input type="radio" name="pet"> Нет</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row full">
+      <div class="field"><label>Eco-friendly подход <span class="hint">— есть ли пожелания?</span></label><textarea rows="2"></textarea></div>
+      <div class="field"><label>Инстаграм-зона / фотоуголок <span class="hint">— идеи</span></label><textarea rows="2"></textarea></div>
+      <div class="field"><label>Три вещи, без которых свадьба не состоится</label><textarea rows="2" placeholder="Самое важное — назовите три момента"></textarea></div>
+    </div>
+  </section>
+
+  <!-- 12. ФИНАЛ -->
+  <section id="s12" class="block">
+    <div class="block-head">
+      <div class="block-num">— XII —</div>
+      <h2>И последнее</h2>
+      <p>То, что поможет нам понять вас лучше</p>
+    </div>
+
+    <div class="row full">
+      <div class="field"><label>Опишите идеальный момент вашей свадьбы <span class="hint">— как вы его видите?</span></label><textarea rows="3"></textarea></div>
+      <div class="field"><label>Чего вы опасаетесь или боитесь? <span class="hint">— мы хотим учесть это</span></label><textarea rows="2"></textarea></div>
+      <div class="field"><label>Какие свадьбы вам нравились? Почему?</label><textarea rows="2"></textarea></div>
+      <div class="field"><label>Какие свадьбы вам НЕ нравились? Почему?</label><textarea rows="2"></textarea></div>
+      <div class="field"><label>Уровень вашего участия в подготовке</label>
+        <div class="options">
+          <label><input type="radio" name="level"> Полный контроль</label>
+          <label><input type="radio" name="level"> Совместное планирование</label>
+          <label><input type="radio" name="level"> Минимум вовлечения</label>
+        </div>
+      </div>
+      <div class="field"><label>Что для нас важно знать, но мы не спросили?</label><textarea rows="3"></textarea></div>
+    </div>
+
+    <div class="note">Благодарим за доверие и детали. После заполнения мы свяжемся с вами для подтверждения встречи и обсуждения первого черновика концепции.</div>
+  </section>
+
+  </main>
+
+  <!-- ACTIONS -->
+  <div class="actions">
+    <button class="btn btn-primary" onclick="window.print()">Сохранить PDF / Распечатать</button>
+    <a class="btn btn-secondary" href="#s1">Наверх</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <em>Свадьба — это начало вашей истории</em>
+    © Свадебное агентство · Все данные конфиденциальны
+  </footer>
+
+</div>
+
+<script>
+  // Плавный скролл по якорям
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Подсветка активного раздела в навигации
+  const sections = document.querySelectorAll('section.block');
+  const navLinks = document.querySelectorAll('.nav a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(link => {
+          link.style.background = link.getAttribute('href') === '#' + id ? 'var(--champagne)' : '';
+          link.style.color = link.getAttribute('href') === '#' + id ? 'var(--brown)' : '';
+        });
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
