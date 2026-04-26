@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Дарья — Свадебный организатор · СПб</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+–bg: #f7f2ec;
+–card: #fffcf8;
+–rose: #c4826a;
+–rose-light: #e8c5b4;
+–gold: #b89a6e;
+–deep: #28201a;
+–muted: #8c7a72;
+–tg: #2AABEE;
+}
+
+html, body {
+min-height: 100%;
+background: var(–bg);
+}
+
+body {
+font-family: ‘Jost’, sans-serif;
+display: flex;
+align-items: center;
+justify-content: center;
+min-height: 100svh;
+padding: 32px 20px;
+position: relative;
+overflow-x: hidden;
+}
+
+/* Ambient background blobs */
+body::before {
+content: ‘’;
+position: fixed;
+top: -120px; left: -120px;
+width: 500px; height: 500px;
+border-radius: 50%;
+background: radial-gradient(circle, rgba(196,130,106,0.13) 0%, transparent 70%);
+pointer-events: none;
+z-index: 0;
+}
+body::after {
+content: ‘’;
+position: fixed;
+bottom: -100px; right: -100px;
+width: 420px; height: 420px;
+border-radius: 50%;
+background: radial-gradient(circle, rgba(184,154,110,0.1) 0%, transparent 70%);
+pointer-events: none;
+z-index: 0;
+}
+
+.card {
+position: relative;
+z-index: 1;
+background: var(–card);
+border-radius: 24px;
+padding: 48px 36px 40px;
+max-width: 400px;
+width: 100%;
+box-shadow:
+0 2px 4px rgba(44,32,26,0.04),
+0 12px 40px rgba(44,32,26,0.08),
+0 0 0 1px rgba(196,130,106,0.1);
+animation: fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) both;
+}
+
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(24px); }
+to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Decorative top line */
+.card::before {
+content: ‘’;
+position: absolute;
+top: 0; left: 50%; transform: translateX(-50%);
+width: 60px; height: 2px;
+background: linear-gradient(90deg, transparent, var(–rose), transparent);
+border-radius: 0 0 2px 2px;
+}
+
+/* Avatar */
+.avatar-wrap {
+display: flex;
+justify-content: center;
+margin-bottom: 20px;
+animation: fadeUp 0.7s 0.1s cubic-bezier(0.22,1,0.36,1) both;
+}
+.avatar-ring {
+width: 96px; height: 96px;
+border-radius: 50%;
+padding: 3px;
+background: linear-gradient(135deg, var(–rose-light), var(–gold), var(–rose));
+}
+.avatar-inner {
+width: 100%; height: 100%;
+border-radius: 50%;
+background: var(–bg);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 1px;
+}
+.avatar-daria {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 26px;
+font-weight: 400;
+font-style: italic;
+color: var(–rose);
+line-height: 1;
+letter-spacing: -0.5px;
+}
+.avatar-handle {
+font-family: ‘Jost’, sans-serif;
+font-size: 8.5px;
+font-weight: 500;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+color: var(–gold);
+line-height: 1;
+}
+
+/* Name & title */
+.name {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 32px;
+font-weight: 300;
+color: var(–deep);
+text-align: center;
+line-height: 1.1;
+margin-bottom: 6px;
+animation: fadeUp 0.7s 0.15s cubic-bezier(0.22,1,0.36,1) both;
+}
+.name em {
+font-style: italic;
+color: var(–rose);
+}
+
+.title {
+text-align: center;
+font-size: 11px;
+letter-spacing: 2.5px;
+text-transform: uppercase;
+color: var(–muted);
+margin-bottom: 28px;
+animation: fadeUp 0.7s 0.2s cubic-bezier(0.22,1,0.36,1) both;
+}
+
+/* Divider */
+.divider {
+display: flex;
+align-items: center;
+gap: 12px;
+margin-bottom: 28px;
+animation: fadeUp 0.7s 0.25s cubic-bezier(0.22,1,0.36,1) both;
+}
+.divider-line { flex: 1; height: 1px; background: rgba(196,130,106,0.2); }
+.divider-dot { font-size: 10px; color: var(–rose-light); }
+
+/* Tagline */
+.tagline {
+text-align: center;
+font-size: 14px;
+color: var(–muted);
+line-height: 1.65;
+margin-bottom: 32px;
+font-weight: 300;
+animation: fadeUp 0.7s 0.28s cubic-bezier(0.22,1,0.36,1) both;
+}
+.tagline strong { color: var(–deep); font-weight: 500; }
+
+/* Buttons */
+.buttons {
+display: flex;
+flex-direction: column;
+gap: 12px;
+margin-bottom: 28px;
+}
+
+.btn {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+padding: 16px 24px;
+border-radius: 14px;
+text-decoration: none;
+font-size: 14px;
+font-weight: 500;
+letter-spacing: 0.3px;
+transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+position: relative;
+overflow: hidden;
+}
+.btn:active { transform: scale(0.97); }
+.btn::after {
+content: ‘’;
+position: absolute;
+inset: 0;
+background: white;
+opacity: 0;
+transition: opacity 0.15s;
+}
+.btn:hover::after { opacity: 0.07; }
+
+.btn-primary {
+background: linear-gradient(135deg, #c4826a 0%, #b06a50 100%);
+color: white;
+box-shadow: 0 4px 20px rgba(196,130,106,0.35);
+animation: fadeUp 0.7s 0.32s cubic-bezier(0.22,1,0.36,1) both;
+}
+.btn-primary:hover {
+box-shadow: 0 6px 28px rgba(196,130,106,0.45);
+transform: translateY(-1px);
+}
+
+.btn-tg {
+background: linear-gradient(135deg, #2AABEE 0%, #1a96d4 100%);
+color: white;
+box-shadow: 0 4px 20px rgba(42,171,238,0.28);
+animation: fadeUp 0.7s 0.38s cubic-bezier(0.22,1,0.36,1) both;
+}
+.btn-tg:hover {
+box-shadow: 0 6px 28px rgba(42,171,238,0.38);
+transform: translateY(-1px);
+}
+
+.btn-outline {
+background: transparent;
+color: var(–deep);
+border: 1.5px solid rgba(196,130,106,0.3);
+box-shadow: none;
+animation: fadeUp 0.7s 0.44s cubic-bezier(0.22,1,0.36,1) both;
+}
+.btn-outline:hover {
+border-color: var(–rose);
+background: rgba(196,130,106,0.04);
+transform: translateY(-1px);
+}
+
+.btn-icon {
+width: 20px;
+height: 20px;
+flex-shrink: 0;
+}
+
+/* Stats row */
+.stats {
+display: flex;
+justify-content: center;
+gap: 0;
+margin-bottom: 28px;
+background: rgba(196,130,106,0.06);
+border-radius: 14px;
+padding: 16px 0;
+animation: fadeUp 0.7s 0.5s cubic-bezier(0.22,1,0.36,1) both;
+}
+.stat {
+flex: 1;
+text-align: center;
+position: relative;
+}
+.stat:not(:last-child)::after {
+content: ‘’;
+position: absolute;
+right: 0; top: 15%; height: 70%;
+width: 1px;
+background: rgba(196,130,106,0.2);
+}
+.stat-val {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 22px;
+font-weight: 400;
+color: var(–rose);
+line-height: 1;
+margin-bottom: 4px;
+}
+.stat-label {
+font-size: 10px;
+letter-spacing: 0.5px;
+color: var(–muted);
+text-transform: uppercase;
+}
+
+/* Footer */
+.footer {
+text-align: center;
+font-size: 11px;
+color: var(–muted);
+animation: fadeUp 0.7s 0.56s cubic-bezier(0.22,1,0.36,1) both;
+}
+.footer a {
+color: var(–rose);
+text-decoration: none;
+}
+.footer a:hover { text-decoration: underline; }
+
+/* Petal decoration */
+.petal {
+position: fixed;
+pointer-events: none;
+z-index: 0;
+opacity: 0.18;
+font-size: 22px;
+animation: drift linear infinite;
+}
+@keyframes drift {
+0%   { transform: translateY(-40px) rotate(0deg); opacity: 0; }
+10%  { opacity: 0.18; }
+90%  { opacity: 0.12; }
+100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- Floating petals -->
+
+<span class="petal" style="left:8%;  animation-duration:12s; animation-delay:0s;   top:-40px;">🌸</span>
+<span class="petal" style="left:25%; animation-duration:15s; animation-delay:3s;   top:-40px;">🤍</span>
+<span class="petal" style="left:60%; animation-duration:11s; animation-delay:1.5s; top:-40px;">🌸</span>
+<span class="petal" style="left:80%; animation-duration:14s; animation-delay:5s;   top:-40px;">🤍</span>
+<span class="petal" style="left:45%; animation-duration:13s; animation-delay:7s;   top:-40px;">🌸</span>
+
+<div class="card">
+
+  <div class="avatar-wrap">
+    <div class="avatar-ring">
+      <div class="avatar-inner">
+        <span class="avatar-daria">Daria</span>
+        <span class="avatar-handle">_woow</span>
+      </div>
+    </div>
+  </div>
+
+  <h1 class="name">Дарья <em>Woow</em></h1>
+  <p class="title">Свадебный организатор · СПб</p>
+
+  <div class="divider">
+    <div class="divider-line"></div>
+    <span class="divider-dot">✦</span>
+    <div class="divider-line"></div>
+  </div>
+
+  <p class="tagline">
+    Помогаю невестам организовать<br>
+    <strong>свадьбу мечты — без стресса</strong><br>
+    и хаоса подготовки 🤍
+  </p>
+
+  <div class="buttons">
+
+```
+<!-- Telegram -->
+<a href="https://t.me/daria_woow" class="btn btn-tg">
+  <svg class="btn-icon" viewBox="0 0 24 24" fill="none">
+    <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.93 6.686l-1.68 7.92c-.126.56-.455.696-.921.433l-2.55-1.878-1.23 1.183c-.136.136-.25.25-.513.25l.183-2.598 4.728-4.27c.206-.183-.044-.285-.32-.102L7.55 14.41l-2.51-.784c-.546-.17-.558-.546.114-.808l9.8-3.779c.455-.165.853.102.706.808-.001-.001-.001 0 0 0z" fill="white"/>
+  </svg>
+  Написать в Telegram
+</a>
+
+<!-- Instagram DM -->
+<a href="https://ig.me/m/daria_woow" class="btn btn-primary">
+  <svg class="btn-icon" viewBox="0 0 24 24" fill="none">
+    <rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="1.8"/>
+    <circle cx="12" cy="12" r="4" stroke="white" stroke-width="1.8"/>
+    <circle cx="17.5" cy="6.5" r="1" fill="white"/>
+  </svg>
+  Написать в Instagram
+</a>
+
+<!-- Price / site -->
+<a href="https://daria-woow.github.io/#price" class="btn btn-outline">
+  <svg class="btn-icon" viewBox="0 0 24 24" fill="none">
+    <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M9 12h6M9 16h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </svg>
+  Услуги и цены
+</a>
+```
+
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-val">3</div>
+      <div class="stat-label">Услуги</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val">СПб</div>
+      <div class="stat-label">Город</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val">2026</div>
+      <div class="stat-label">Невеста сама</div>
+    </div>
+  </div>
+
+  <p class="footer">
+    <a href="https://daria-woow.github.io">daria-woow.github.io</a> · @daria_woow
+  </p>
+
+</div>
+
+</body>
+</html>
